@@ -51,7 +51,7 @@ services:
       POSTGRES_USER: "${POSTGRES_USER}"
       POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
       # POSTGRES_DB: "${POSTGRES_DB}"
-    image: "postgres:18.4-trixie"
+    image: "postgres:18.6-trixie"
     profiles: ["postgres"]
     restart: "${DOCKER_RESTART_POLICY:-unless-stopped}"
     stop_grace_period: "3s"
@@ -64,7 +64,7 @@ services:
         limits:
           cpus: "${DOCKER_REDIS_CPUS:-0}"
           memory: "${DOCKER_REDIS_MEMORY:-0}"
-    image: "redis:8.8.0-trixie"
+    image: "redis:8.10.1-trixie"
     profiles: ["redis"]
     restart: "${DOCKER_RESTART_POLICY:-unless-stopped}"
     stop_grace_period: "3s"
